@@ -1,5 +1,6 @@
 import 'package:atm/Counter.dart';
 import 'package:atm/calculator.dart';
+import 'package:atm/stack%20class.dart';
 import 'package:flutter/material.dart';
 void main()
 {
@@ -12,8 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Calculator(),
-      //Counter(),
+      home:StackCounter(),
+      //Stack(),
+      //Calculator(),
+     // Counter(),
     );
   }
 }
