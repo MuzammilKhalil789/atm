@@ -9,6 +9,7 @@ class StackCounter extends StatefulWidget {
 
 class _StackCounterState extends State<StackCounter> {
   int counter=0;
+  int isSelect=1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,17 +45,28 @@ class _StackCounterState extends State<StackCounter> {
             setState(() {
               
             });
-          }, child: Text('Reset',style: TextStyle(color: Colors.black,fontSize: 10,)),
+          }, child: Text('Reset',style: TextStyle(color: Colors.blue,fontSize: 12,
+          )),
           ),
           ),
           Padding(padding: const EdgeInsets.only(top: 350,left: 80),
           child: IconButton(onPressed: (){
+            if(isSelect==0)
+              {
+                isSelect=1;
+              }
+            else{
+              isSelect=0;
+            }
+            setState(() {
+
+            });
             if(counter>0){
               setState(() {
                 counter--;
               });
             }
-          }, icon: Icon(Icons.minimize,size: 30,color: Colors.black,)),
+          }, icon: Icon(Icons.minimize,size: 30,color: isSelect==1?Colors.white:Colors.blue)),
           ),
             ],
     ),
